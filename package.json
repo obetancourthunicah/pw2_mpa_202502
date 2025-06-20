@@ -12,6 +12,8 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
-    "less": "^4.3.0"
+    "glob": "^11.0.3",
+    "less": "^4.3.0",
+    "vite-plugin-purgecss": "^0.2.13"
   }
 }
