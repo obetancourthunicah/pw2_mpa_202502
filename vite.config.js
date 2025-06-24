@@ -1,8 +1,11 @@
 import { defineConfig } from "vite";
 import htmlPurge from 'vite-plugin-purgecss';
 import { ViteMinifyPlugin } from 'vite-plugin-minify';
+import handlebars from 'vite-plugin-handlebars';
 import path, {resolve} from 'node:path';
 import * as glob from 'glob';
+
+import getPageContext from './siteData';
 
 const obtenerEntradas = ()=> {
     return Object.fromEntries(
@@ -36,6 +39,10 @@ export default defineConfig(
             minify: true
         },
         plugins: [
+            handlebars({
+                partialDirectory: resolve(__dirname, 'partials'),
+                context: getPageContext
+            }),
             htmlPurge({}),
             ViteMinifyPlugin(),
         ]
