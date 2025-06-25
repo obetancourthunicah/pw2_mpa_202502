@@ -1,0 +1,28 @@
+.gallery {
+    display:flex;
+    padding: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:1rem;
+    justify-content: center;
+    align-items: start;
+    .thumbnail{
+        position: relative;
+        img{
+            .imgCover();
+            margin:0px;
+            padding:0px;
+        }
+        span{
+            position:absolute;
+            width:100%;
+            background-color: fadeout(darken(@primary-background-color, 30%), 20%);
+            color: lighten(@primary-text-color, 100%);
+            bottom: 0px;
+            left: 0px;
+            .p-x-4();
+            .p-y-3();
+        }
+    }
+}
+
